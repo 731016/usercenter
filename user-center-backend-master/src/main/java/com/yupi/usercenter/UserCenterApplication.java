@@ -21,5 +21,3 @@ public class UserCenterApplication {
     }
 
 }
-
-// https://github.com/liyupi

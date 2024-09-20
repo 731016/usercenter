@@ -50,11 +50,10 @@ public class UserController {
         String userAccount = userRegisterRequest.getUserAccount();
         String userPassword = userRegisterRequest.getUserPassword();
         String checkPassword = userRegisterRequest.getCheckPassword();
-        String planetCode = userRegisterRequest.getPlanetCode();
-        if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword, planetCode)) {
+        if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)) {
             return null;
         }
-        long result = userService.userRegister(userAccount, userPassword, checkPassword, planetCode);
+        long result = userService.userRegister(userAccount, userPassword, checkPassword);
         return ResultUtils.success(result);
     }
 
@@ -73,7 +72,7 @@ public class UserController {
         String userAccount = userLoginRequest.getUserAccount();
         String userPassword = userLoginRequest.getUserPassword();
         if (StringUtils.isAnyBlank(userAccount, userPassword)) {
-            return ResultUtils.error(ErrorCode.PARAMS_ERROR);
+            return ResultUtils.error(ErrorCode.NOT_USER);
         }
         User user = userService.userLogin(userAccount, userPassword, request);
         return ResultUtils.success(user);
