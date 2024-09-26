@@ -1,4 +1,4 @@
 ## 用户中心
 
-前端：user-center-frontend-master/README.md
-后端：user-center-backend-master/README.md
+前端：https://github.com/731016/usercenter/tree/master/user-center-backend-master
+后端：https://github.com/731016/usercenter/tree/master/user-center-backend-master
