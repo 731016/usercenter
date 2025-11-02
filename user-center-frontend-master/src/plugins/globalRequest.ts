@@ -12,7 +12,7 @@ import {stringify} from "querystring";
  */
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
-  prefix: process.env.NODE_ENV === 'production' ? 'http://localhost:10080' : undefined
+  prefix: process.env.NODE_ENV === 'production' ? 'http://localhost:8101' : undefined
   // requestType: 'form',
 });
 
@@ -48,7 +48,7 @@ request.interceptors.response.use(async (response, options): Promise<any> => {
       }),
     });
   } else {
-    message.error(res.description)
+    message.error(res.message)
   }
   return res.data;
 });
